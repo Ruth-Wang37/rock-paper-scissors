@@ -14,15 +14,15 @@
     let pick = Math.floor(Math.random() * 3) + 1;
     // if pick is 1 to return rock
     if (pick === 1) {
-        return "rock";
+        return a;
     } 
     // if pick is 2 return paper
     else if (pick === 2) {
-        return "paper";
+        return b;
     } 
     // if pick is 3 return scissors
     else if (pick === 3) {
-        return "scissors";
+        return c;
     }
  
  }
