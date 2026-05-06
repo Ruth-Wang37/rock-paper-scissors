@@ -1,1 +1,30 @@
+ // the console.log() is for checking if the rock.js file is linked 
+ //properly to the html file
  console.log("Hello World!")
+
+ // a function that randomly returns "rock" | "paper" | "scissors"
+
+ let a = "rock";
+ let b = "scissors";
+ let c = "paper";
+
+ // math.floor is to get the math.random to convert the decimal numbers to whole
+
+ function getComputerChoice(a, b, c) {
+    let pick = Math.floor(Math.random() * 3) + 1;
+    // if pick is 1 to return rock
+    if (pick === 1) {
+        return "rock";
+    } 
+    // if pick is 2 return paper
+    else if (pick === 2) {
+        return "paper";
+    } 
+    // if pick is 3 return scissors
+    else if (pick === 3) {
+        return "scissors";
+    }
+ 
+ }
+ let result = getComputerChoice(a, b, c);
+ console.log(result);
