@@ -28,3 +28,20 @@
  }
  let result = getComputerChoice(a, b, c);
  console.log(result);
+
+ function getHumanChoice(a,b,c) {
+    let pick = prompt("Choose a number: ")
+    if (pick === 1) {
+       return a;
+    } else if ( pick === 2) {
+        return b;
+    } else if (pick === 3) {
+        return c;
+    }
+       // prompt("choose a number: ");
+    // return result;
+
+ }
+
+let answer = getHumanChoice(a,b,c);
+ console.log(answer)
