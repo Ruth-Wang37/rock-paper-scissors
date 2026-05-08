@@ -29,19 +29,24 @@
  let result = getComputerChoice(a, b, c);
  console.log(result);
 
+  
  function getHumanChoice(a,b,c) {
-    let pick = prompt("Choose a number: ")
+    //so the prompt returns a string
+    let pick = Number(prompt("Choose a number: "));
+    //get the string to be a number
     if (pick === 1) {
        return a;
     } else if ( pick === 2) {
         return b;
     } else if (pick === 3) {
         return c;
+    }else {
+        return "Nothing was picked"
     }
        // prompt("choose a number: ");
     // return result;
 
  }
 
-let answer = getHumanChoice(a,b,c);
- console.log(answer)
+  let answer = getHumanChoice(a,b,c);
+   console.log(answer);
