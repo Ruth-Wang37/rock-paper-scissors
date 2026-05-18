@@ -2,33 +2,7 @@
  //properly to the html file
  console.log("Hello World!")
 
- //variable for players score
- let humanScore = 0;
- let computerScore = 0;
-
-function playRound(humanChoice, computerChoice) {
-    let newHumanChoice = humanChoice.toLowerCase();
-
-    if (newHumanChoice === computerChoice) {
-        return "Its a tie";
-    } else if (newHumanChoice === "rock" && computerChoice === "scissors") {
-        humanScore ++;
-        return "Human wins!rock beats scissors!";
-    } else if (newHumanChoice === "rock" && computerChoice === "paper") {
-        computerScore ++;
-        return "Computer wins!paper beats rock!"
-    } else if (newHumanChoice === "paper" && computerChoice === "rock") {
-        humanScore ++;
-        return "Human wins!paper beats rocks!";
-    } else if (newHumanChoice === "paper" && computerChoice === "sscissors") {
-        computerScore ++;
-        return "Computer wins!scissors cuts paper!"
-    }
-}
-
-
-
- // a function that randomly returns "rock" | "paper" | "scissors"
+  // a function that randomly returns "rock" | "paper" | "scissors"
  let a = "rock";
  let b = "scissors";
  let c = "paper";
@@ -75,6 +49,45 @@ function playRound(humanChoice, computerChoice) {
 
   let answer = getHumanChoice(a,b,c);
    console.log(answer);
+
+
+ //variable for players score
+ let humanScore = 0;
+ let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+    let newHumanChoice = humanChoice.toLowerCase();
+
+    if (newHumanChoice === computerChoice) {
+        return "Its a tie";
+    } else if (newHumanChoice === "rock" && computerChoice === "scissors") {
+        humanScore ++;
+        return "Human wins!rock beats scissors!";
+    } else if (newHumanChoice === "rock" && computerChoice === "paper") {
+        computerScore ++;
+        return "Computer wins!paper beats rock!"
+    } else if (newHumanChoice === "paper" && computerChoice === "rock") {
+        humanScore ++;
+        return "Human wins!paper beats rocks!";
+    } else if (newHumanChoice === "paper" && computerChoice === "scissors") {
+        computerScore ++;
+        return "Computer wins!scissors cuts paper!"
+    } else if (newHumanChoice === "scissors" && computerChoice === "paper") {
+        humanScore ++;
+        return "Human wins!scissors cuts paper!";
+    } else if (newHumanChoice === "scissors" && computerChoice === "rock") {
+        computerScore ++;
+        return "Computer wins!rock  beats scissors!"
+    }
+}
+let humanChoice = answer;
+let computerChoice = result;
+let score = playRound(answer, result);
+console.log(score);
+
+
+
+
 
 
    
