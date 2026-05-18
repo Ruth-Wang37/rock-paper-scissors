@@ -2,8 +2,33 @@
  //properly to the html file
  console.log("Hello World!")
 
- // a function that randomly returns "rock" | "paper" | "scissors"
+ //variable for players score
+ let humanScore = 0;
+ let computerScore = 0;
 
+function playRound(humanChoice, computerChoice) {
+    let newHumanChoice = humanChoice.toLowerCase();
+
+    if (newHumanChoice === computerChoice) {
+        return "Its a tie";
+    } else if (newHumanChoice === "rock" && computerChoice === "scissors") {
+        humanScore ++;
+        return "Human wins!rock beats scissors!";
+    } else if (newHumanChoice === "rock" && computerChoice === "paper") {
+        computerScore ++;
+        return "Computer wins!paper beats rock!"
+    } else if (newHumanChoice === "paper" && computerChoice === "rock") {
+        humanScore ++;
+        return "Human wins!paper beats rocks!";
+    } else if (newHumanChoice === "paper" && computerChoice === "sscissors") {
+        computerScore ++;
+        return "Computer wins!scissors cuts paper!"
+    }
+}
+
+
+
+ // a function that randomly returns "rock" | "paper" | "scissors"
  let a = "rock";
  let b = "scissors";
  let c = "paper";
@@ -50,3 +75,6 @@
 
   let answer = getHumanChoice(a,b,c);
    console.log(answer);
+
+
+   
