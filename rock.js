@@ -50,9 +50,8 @@
   let answer = getHumanChoice(a,b,c);
    console.log(answer);
 
-
- //variable for players score
- let humanScore = 0;
+   function playGame() {
+    let humanScore = 0;
  let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
@@ -82,8 +81,29 @@ function playRound(humanChoice, computerChoice) {
 }
 let humanChoice = answer;
 let computerChoice = result;
-let score = playRound(answer, result);
-console.log(score);
+// let score = playRound(answer, result);
+// console.log(score);
+   
+let score1 = playRound(getHumanChoice(), getComputerChoice());
+console.log(score1);
+
+let score2 = playRound(getHumanChoice(), getComputerChoice());
+console.log(score2);
+
+let score3 = playRound(getHumanChoice(), getComputerChoice());
+console.log(score3);
+
+let score4 = playRound(getHumanChoice(), getComputerChoice());
+console.log(score4);
+let score5 = playRound(getHumanChoice(), getComputerChoice());
+console.log(score5);
+
+    
+   }
+
+
+ //variable for players score
+
 
 
 
