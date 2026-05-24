@@ -100,11 +100,11 @@ console.log(score5);
 
     
      if (humanScore > computerScore) {
-        console.log("Winner is human ");
+        alert("Winner is human ");
      } else if (computerScore > humanScore) {
-        console.log("Winner is computer");
+        alert("Winner is computer");
      } else if (humanScore === computerScore) {
-        console.log("its a draw");
+        alert("its a draw");
      }
     
    }
