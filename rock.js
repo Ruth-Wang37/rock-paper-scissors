@@ -84,22 +84,31 @@ let computerChoice = result;
 // let score = playRound(answer, result);
 // console.log(score);
    
-let score1 = playRound(getHumanChoice(), getComputerChoice());
+let score1 = playRound(getHumanChoice(a, b, c), getComputerChoice(a, b, c));
 console.log(score1);
 
-let score2 = playRound(getHumanChoice(), getComputerChoice());
+let score2 = playRound(getHumanChoice(a, b, c), getComputerChoice(a, b, c));
 console.log(score2);
 
-let score3 = playRound(getHumanChoice(), getComputerChoice());
+let score3 = playRound(getHumanChoice(a, b, c), getComputerChoice(a, b, c));
 console.log(score3);
 
-let score4 = playRound(getHumanChoice(), getComputerChoice());
+let score4 = playRound(getHumanChoice(a, b, c), getComputerChoice(a, b, c));
 console.log(score4);
-let score5 = playRound(getHumanChoice(), getComputerChoice());
+let score5 = playRound(getHumanChoice(a, b, c), getComputerChoice(a, b, c));
 console.log(score5);
 
     
+     if (humanScore > computerScore) {
+        console.log("Winner is human ");
+     } else if (computerScore > humanScore) {
+        console.log("Winner is computer");
+     } else if (humanScore === computerScore) {
+        console.log("its a draw");
+     }
+    
    }
+   playGame();
 
 
  //variable for players score
