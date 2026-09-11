@@ -1,117 +1,105 @@
- // the console.log() is for checking if the rock.js file is linked 
- //properly to the html file
- console.log("Hello World!")
-
-  // a function that randomly returns "rock" | "paper" | "scissors"
- let a = "rock";
- let b = "scissors";
- let c = "paper";
-
+// a function that randomly returns "rock" | "paper" | "scissors"
  // math.floor is to get the math.random to convert the decimal numbers to whole
 
- function getComputerChoice(a, b, c) {
+ function getComputerChoice() {
     let pick = Math.floor(Math.random() * 3) + 1;
-    // if pick is 1 to return rock
+   
     if (pick === 1) {
-        return a;
+        return "rock";
     } 
-    // if pick is 2 return paper
+  
     else if (pick === 2) {
-        return b;
+        return "paper";
     } 
-    // if pick is 3 return scissors
-    else if (pick === 3) {
-        return c;
+   
+    else {
+        return "scissors";
     }
  
- }
- let result = getComputerChoice(a, b, c);
- console.log(result);
-
-  
- function getHumanChoice(a,b,c) {
-    //so the prompt returns a string
-    let pick = Number(prompt("Choose a number: "));
-    //get the string to be a number
-    if (pick === 1) {
-       return a;
-    } else if ( pick === 2) {
-        return b;
-    } else if (pick === 3) {
-        return c;
-    }else {
-        return "Nothing was picked"
-    }
-       // prompt("choose a number: ");
-    // return result;
-
- }
-
-  let answer = getHumanChoice(a,b,c);
-   console.log(answer);
-
-   function playGame() {
+ }   
     let humanScore = 0;
  let computerScore = 0;
+ let gameOver = false;
+
+const display = document.querySelector('#display');
+let rock = document.querySelector('#rock');
+let paper = document.querySelector('#paper');
+let scissors = document.querySelector('#scissors');
+const results = document.querySelector('#results');
+
 
 function playRound(humanChoice, computerChoice) {
+    let message;
     let newHumanChoice = humanChoice.toLowerCase();
 
     if (newHumanChoice === computerChoice) {
-        return "Its a tie";
+        message = "Its a tie";
     } else if (newHumanChoice === "rock" && computerChoice === "scissors") {
         humanScore ++;
-        return "Human wins!rock beats scissors!";
+       message =  "Human wins!rock beats scissors!";
     } else if (newHumanChoice === "rock" && computerChoice === "paper") {
         computerScore ++;
-        return "Computer wins!paper beats rock!"
+        message = "Computer wins!paper beats rock!"
     } else if (newHumanChoice === "paper" && computerChoice === "rock") {
         humanScore ++;
-        return "Human wins!paper beats rocks!";
+       message =  "Human wins!paper beats rocks!";
     } else if (newHumanChoice === "paper" && computerChoice === "scissors") {
         computerScore ++;
-        return "Computer wins!scissors cuts paper!"
+        message =  "Computer wins!scissors cuts paper!"
     } else if (newHumanChoice === "scissors" && computerChoice === "paper") {
         humanScore ++;
-        return "Human wins!scissors cuts paper!";
+        message = "Human wins!scissors cuts paper!";
     } else if (newHumanChoice === "scissors" && computerChoice === "rock") {
         computerScore ++;
-        return "Computer wins!rock  beats scissors!"
+       message =  "Computer wins!rock  beats scissors!"
     }
+        display.textContent = `Human: ${humanScore} | Computer: ${computerScore}`;
+
+
+       if(humanScore === 5 || computerScore === 5){
+        gameOver = true;
+
+              if (humanScore === 5) {
+             return  "Player wins";
+             } else {
+              return "Bot wins";
+            }
+        }
+return message;
 }
-let humanChoice = answer;
-let computerChoice = result;
-// let score = playRound(answer, result);
-// console.log(score);
+
+  
    
-let score1 = playRound(getHumanChoice(a, b, c), getComputerChoice(a, b, c));
-console.log(score1);
 
-let score2 = playRound(getHumanChoice(a, b, c), getComputerChoice(a, b, c));
-console.log(score2);
+rock.addEventListener('click', () => {
+      if (gameOver) {
+        return;
+    }
+    let result =  playRound("rock",getComputerChoice());
+    results.textContent = result;
+}
+);
 
-let score3 = playRound(getHumanChoice(a, b, c), getComputerChoice(a, b, c));
-console.log(score3);
+paper.addEventListener('click', () => {
+    if (gameOver) {
+        return;
+    }
+    let result =  playRound("paper",getComputerChoice());
+    results.textContent = result;
+}
+);
 
-let score4 = playRound(getHumanChoice(a, b, c), getComputerChoice(a, b, c));
-console.log(score4);
-let score5 = playRound(getHumanChoice(a, b, c), getComputerChoice(a, b, c));
-console.log(score5);
-
-    
-     if (humanScore > computerScore) {
-        alert("Winner is human ");
-     } else if (computerScore > humanScore) {
-        alert("Winner is computer");
-     } else if (humanScore === computerScore) {
-        alert("its a draw");
-     }
-    
-   }
-   playGame();
+scissors.addEventListener('click', () => {
+    if (gameOver) {
+        return;
+    }
+    let result =  playRound("scissors",getComputerChoice());
+    results.textContent = result;
+}
+);
 
 
- //variable for players score
+
 
 
 
